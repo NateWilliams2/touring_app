@@ -1,0 +1,56 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body {
+   background-color: #f7dfdf;
+ }
+
+ h1 {
+   color: Blue;
+   text-align: center;
+ }
+
+ p {
+   font-family: verdana;
+   font-size: 28px;
+ }
+
+/*The following nav design is adapted from Dominik Biedebach, https://codepen.io/d2k/pen/jEmWXq/ */
+ .nav {
+   list-style: none;
+   text-align: center;
+ }
+ .nav li {
+   display: inline-block;
+ }
+ .nav li a {
+   display: block;
+   padding: 15px;
+   text-decoration: none;
+   color: #521313;
+   font-weight: 1000;
+   text-transform: uppercase;
+   margin: 0 10px;
+ }
+ .nav li a,
+ .nav li a:after,
+ .nav li a:before {
+   transition: all .5s;
+ }
+ .nav li a:hover {
+   color: #4affd5;
+   text-decoration: underline;
+ }
