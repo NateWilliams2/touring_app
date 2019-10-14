@@ -8,3 +8,23 @@
   <li><a href="/static_pages/map">Touring Map</a></li>
   <li><a href="/static_pages/finances">Finance Calculator</a></li>
 </ul>
+
+<ul class="calendar">
+  <%if !@shows.blank? %>
+    <% for item in @shows %>
+      <div class="card">
+      <div class="show">
+       <span class="show-date"><b>Date: <%=format_date(item.date)%></b></span>
+       <div class="card-info">
+          <p>Lodging: <%=item.lodging%></p>
+          <p>Notes: <%=item.description%></p>
+          <p>Address: <%=item.address%></p>
+          <p>Load-in: <%=format_time(item.load_in)%></p>
+          <p>Set time: <%=format_time(item.set)%></p>
+         </div>
+         </div>
+       </div>
+      </div>
+    <% end %>
+  <% end %>
+</ul>

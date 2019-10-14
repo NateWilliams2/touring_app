@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pay: 1
+  load_in: 2019-10-13 16:14:32
+  set: 2019-10-13 16:14:32
+  lodging: MyString
+  description: MyText
+  date: 2019-10-13
+  references: 
+
+two:
+  pay: 1
+  load_in: 2019-10-13 16:14:32
+  set: 2019-10-13 16:14:32
+  lodging: MyString
+  description: MyText
+  date: 2019-10-13
+  references: 
