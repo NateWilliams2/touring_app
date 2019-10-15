@@ -1,7 +1,6 @@
 <% provide(:title, "Touring Calendar") %>
 <!--image from https://pixabay.com/illustrations/calendar-icon-minimalist-time-1559935/-->
 <% provide(:icon_path, "calendar.png") %>
-
 <ul class="calendar">
   <%if !@tours.blank?%>
     <% for tour in @tours %>
@@ -9,17 +8,15 @@
         <h1><%=tour.title%></h1>
         <%for show in get_shows(tour.id) %>
           <div class="card">
-            <div class="show">
-              <div class="card-info">
-                <p><b><%=format_date(show.date) + ": " + show.address.city + " " + show.address.state%></b></p>
-                <p>Lodging: <%=show.lodging%></p>
-                <p>Address: <%=show.address.fmt_address()%></p>
-                <p>Load-in: <%=format_time(show.load_in)%></p>
-                <p>Set time: <%=format_time(show.set)%></p>
-                <%if show.description != nil%>
-                  <p>Notes: <%=show.description%></p>
-                <%end%>
-              </div>
+            <div class="content">
+              <p><b><%=format_date(show.date) + ": " + show.address.city + " " + show.address.state%></b></p>
+              <p>Lodging: <%=show.lodging%></p>
+              <p>Address: <%=show.address.fmt_address()%></p>
+              <p>Load-in: <%=format_time(show.load_in)%></p>
+              <p>Set time: <%=format_time(show.set)%></p>
+              <%if show.description != nil%>
+                <p>Notes: <%=show.description%></p>
+              <%end%>
             </div>
           </div>
         </div>
