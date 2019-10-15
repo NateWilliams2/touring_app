@@ -1,10 +1,19 @@
-<% provide(:title, "Finances") %>
+<% provide(:title, "Tour Finances") %>
 <!--image from https://www.goodfreephotos.com/vector-images/stacks-of-hundred-dollar-bills-cash-vector-clipart.png.php-->
 <% provide(:icon_path, "finances.png") %>
-<h1>Tour Finances Calculator</h1>
-<ul class="nav">
-  <li><a href="/static_pages/home">Home</a></li>
-  <li><a href="/static_pages/calendar">Touring Calendar</a></li>
-  <li><a href="/static_pages/map">Touring Map</a></li>
-  <li><a href="/static_pages/finances">Finance Calculator</a></li>
-</ul>
+<div class="finances">
+  <%if !@tours.blank?%>
+    <% for tour in @tours %>
+      <h1><%=tour.title%></h1>
+      <h3>Tour Income</h3>
+      <ul class="tour income">
+        <li>Expected income from shows: <%=show_income = get_tour_show_income(tour.id)%></li>
+        <li>Expected income from merch sales: <%=merch_income = get_tour_merch_income(tour.id)%></li>
+        <li>Expected total income: <%=show_income + merch_income%></li>
+      </ul>
+      <h3>Band Payment</h3>
+      <ul class="band payment">
+      </ul>
+    <%end%>
+  <%end%>
+</div>

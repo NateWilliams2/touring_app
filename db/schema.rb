@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_10_13_234019) do
 
   create_table "shows", force: :cascade do |t|
     t.integer "pay"
+    t.integer "expected_merch"
     t.time "load_in"
     t.time "set"
     t.string "lodging"

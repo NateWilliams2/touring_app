@@ -6,12 +6,14 @@ class StaticPagesController < ApplicationController
   end
 
   def finances
+    @tours = Tour.order("start_date").all
   end
 
   def calendar
-    @shows = Show.order('date').all
+    @tours = Tour.order("start_date").all
   end
 
   def map
+    @tours = Tour.order("start_date").all
   end
 end
