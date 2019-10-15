@@ -19,14 +19,13 @@ Quotation.create(quote: "I make my money off of touring and merchandise. And I'm
 Quotation.create(quote: "The touring was crazy, it was a lot of work. But I enjoyed it.",
                  author: "Adam Ant")
 
-tour1 = Tour.create!(title: "Fall 2020 tour", start_date: "2020-09-12", end_date: "2020-12-14", expected_merch: 1300)
-tour2 = Tour.create!(title: "Fall 2021 tour", start_date: "2020-09-12", end_date: "2020-12-14", expected_merch: 1300)
+tour1 = Tour.create!(title: "Fall 2020 tour", start_date: "2020-09-12", end_date: "2020-12-14")
+tour2 = Tour.create!(title: "Fall 2021 tour", start_date: "2020-09-12", end_date: "2020-12-14")
 
-tour1.members.create!(name: "Bob", role: "Bass", pay: 15, pay_by_percent: true, tour: tour1)
-tour1.members.create!(name: "Alice", role: "Drums", pay: 15, pay_by_percent: true, tour: tour1)
-tour1.members.create!(name: "Jim", role: "Merch", pay: 15, pay_by_percent: true, tour: tour1)
-tour1.members.create!(name: "Scott", role: "Guitar", pay: 15, pay_by_percent: true, tour: tour1)
-tour1.members.create!(name: "Beth", role: "Manager", pay: 300, pay_by_percent: false, tour: tour1)
+Member.create!(name: "Bob", role: "Bass", pay: 15, pay_by_percent: true, tour: tour1, musician: true)
+Member.create!(name: "Alice", role: "Drums", pay: 15, pay_by_percent: true, tour: tour1, musician: true)
+Member.create!(name: "Jim", role: "Merch", pay: 15, pay_by_percent: true, tour: tour1, musician: false)
+Member.create!(name: "Beth", role: "Manager", pay: 300, pay_by_percent: false, tour: tour1, musician: false)
 
 show1 = Show.create!(description: "First show!", pay: 400, date: "2020-09-12", load_in: "17:30", set: "21:00", lodging: "Lincoln Intercontinental", tour: tour1, expected_merch: 250)
 Address.create!(state: "Nebraska", city: "Lincoln", street: "Main st", number: "345", stop: show1)

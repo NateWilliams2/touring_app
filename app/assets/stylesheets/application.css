@@ -18,13 +18,9 @@
    background-color: #f7dfdf;
  }
 
- h1 {
-   color: Blue;
-   text-align: center;
- }
 
  p {
-   font-family: verdana;
+   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
    font-size: 28px;
  }
 
@@ -43,7 +39,7 @@
    color: #521313;
    font-weight: 1000;
    text-transform: uppercase;
-   margin: 0 10px;
+   margin: 0 auto;
  }
  .nav li a,
  .nav li a:after,
@@ -54,3 +50,28 @@
    color: #4affd5;
    text-decoration: underline;
  }
+
+ .nav ul {
+  list-style: none;
+  text-align: center;
+}
+.nav ul li {
+  display: inline-block;
+}
+.nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+.nav ul li a,
+.nav ul li a:after,
+.nav ul li a:before {
+  transition: all .5s;
+}
+.nav ul li a:hover {
+  color: #555;
+}

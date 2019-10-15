@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_10_13_234019) do
     t.string "role"
     t.integer "pay"
     t.boolean "pay_by_percent"
+    t.boolean "musician"
     t.integer "tour_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -68,7 +69,6 @@ ActiveRecord::Schema.define(version: 2019_10_13_234019) do
   create_table "tours", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
-    t.integer "expected_merch"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

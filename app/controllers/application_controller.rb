@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :format_date, :format_time, :get_shows, :get_tour_show_income, :get_tour_merch_income
+  helper_method :format_date, :format_time, :get_shows, :get_tour_show_income, :get_tour_merch_income,
+                :get_members
 
   #Function to format dates for printing
   def format_date(date)
@@ -15,6 +16,11 @@ class ApplicationController < ActionController::Base
   #function to get ordered list of shows from a tour
   def get_shows(tourid)
     return Show.where("tour_id = '" + tourid.to_s + "'").order("date")
+  end
+
+  #function to get ordered list of members from a tour
+  def get_members(tourid)
+    return Member.where("tour_id = '" + tourid.to_s + "'").order("musician").reverse_order
   end
 
   #function to calculate the total income from a tour's shows
