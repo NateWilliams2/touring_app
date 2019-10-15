@@ -1,3 +1,22 @@
 <% provide(:title, "Band Members") %>
-<!--image from https://pixabay.com/vectors/map-scroll-pirate-treasure-29903/-->
-<% provide(:icon_path, "map.png") %>
+<!--image from https://pixabay.com/illustrations/band-silhouette-drums-guitar-1595310/-->
+<% provide(:icon_path, "band.png") %>
+
+<ul class="band">
+  <%if !@tours.blank?%>
+    <% for tour in @tours %>
+      <h1><%=tour.title%></h1>
+      <% for member in get_members(tour.id) %>
+        <div class="card">
+          <p><b><%=member.role%>: <%=member.name%></b></p>
+          <p> gets paid
+          <%if member.pay_by_percent%>
+            <%=member.pay%>%</p>
+            <%else%>
+            $<%=member.pay%></p>
+          <%end%>
+        </div>
+      <%end%>
+    <% end %>
+  <% end %>
+</ul>
