@@ -18,11 +18,23 @@
    background-color: #f7dfdf;
  }
 
+ h1 {
+  color: rgb(44, 17, 17);
+  text-align: center;
+}
+h2 {
+  color: rgb(44, 17, 17);
+  text-align: center;
+}
+h3 {
+  color: rgb(44, 17, 17);
+  text-align: center;
+}
 
- p {
-   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-   font-size: 28px;
- }
+p {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 20px;
+}
 
 /*The following nav design is adapted from Dominik Biedebach, https://codepen.io/d2k/pen/jEmWXq/ */
  .nav {
