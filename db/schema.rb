@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_13_234019) do
+ActiveRecord::Schema.define(version: 2019_10_13_221721) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "state"
     t.string "city"
     t.string "street"
     t.integer "number"
-    t.string "stop_type"
-    t.integer "stop_id"
+    t.integer "show_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["stop_type", "stop_id"], name: "index_addresses_on_stop_type_and_stop_id"
+    t.index ["show_id"], name: "index_addresses_on_show_id"
   end
 
   create_table "members", force: :cascade do |t|
@@ -34,14 +33,6 @@ ActiveRecord::Schema.define(version: 2019_10_13_234019) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["tour_id"], name: "index_members_on_tour_id"
-  end
-
-  create_table "pit_stops", force: :cascade do |t|
-    t.string "name"
-    t.date "date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "address"
   end
 
   create_table "quotations", force: :cascade do |t|
@@ -74,7 +65,6 @@ ActiveRecord::Schema.define(version: 2019_10_13_234019) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "member"
     t.integer "show"
-    t.integer "pit_stop"
   end
 
 end

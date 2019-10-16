@@ -5,7 +5,7 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.string :city
       t.string :street
       t.integer :number
-      t.references :stop, polymorphic: true
+      t.references :show
 
       t.timestamps
     end

@@ -28,8 +28,8 @@ Member.create!(name: "Jim", role: "Merch", pay: 15, pay_by_percent: true, tour: 
 Member.create!(name: "Beth", role: "Manager", pay: 300, pay_by_percent: false, tour: tour1, musician: false)
 
 show1 = Show.create!(description: "First show!", pay: 400, date: "2020-09-12", load_in: "17:30", set: "21:00", lodging: "Lincoln Intercontinental", tour: tour1, expected_merch: 250)
-Address.create!(state: "Nebraska", city: "Lincoln", street: "Main st", number: "345", stop: show1)
+Address.create!(state: "Nebraska", city: "Lincoln", street: "Main st", number: "345", show: show1)
 show2 = Show.create!(pay: 200, date: "2020-10-10", load_in: "16:30", set: "20:00", lodging: "Bob's uncle's house", tour: tour1, expected_merch: 35)
-Address.create!(state: "Iowa", city: "Iowa City", street: "Falls st", number: "22", stop: show2)
+Address.create!(state: "Iowa", city: "Iowa City", street: "Falls st", number: "22", show: show2)
 show3 = Show.create!(description: "MPLS Calling Festival", pay: 700, date: "2020-10-3", load_in: "17:00", set: "17:30", lodging: "Minneapolis Holiday Inn", tour: tour1, expected_merch: 100)
-Address.create!(state: "Minnesota", city: "Minneapolis", street: "High st", number: "2200", stop: show3)
+Address.create!(state: "Minnesota", city: "Minneapolis", street: "High st", number: "2200", show: show3)

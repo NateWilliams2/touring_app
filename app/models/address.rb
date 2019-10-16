@@ -1,5 +1,5 @@
 class Address < ApplicationRecord
-  belongs_to :stop, polymorphic: true, foreign_key: "stop_id"
+  belongs_to :show
 
   def fmt_address
     return number.to_s + " " + street + ", " + city + " " + state
