@@ -27,9 +27,22 @@ Member.create!(name: "Alice", role: "Drums", pay: 15, pay_by_percent: true, tour
 Member.create!(name: "Jim", role: "Merch", pay: 15, pay_by_percent: true, tour: tour1, musician: false)
 Member.create!(name: "Beth", role: "Manager", pay: 300, pay_by_percent: false, tour: tour1, musician: false)
 
-show1 = Show.create!(description: "First show!", pay: 400, date: "2020-09-12", load_in: "17:30", set: "21:00", lodging: "Lincoln Intercontinental", tour: tour1, expected_merch: 250)
+show1 = Show.create!(description: "First show!", pay: 400, date: "2020-09-12",
+                     load_in: "17:30", set: "21:00", lodging: "Lincoln Intercontinental",
+                     tour: tour1, expected_merch: 250, wifi_net: "Belkin09", wifi_pw: "Password01",
+                     laundry: false, showers: true, contact_name: "Bruce Saverino", contact_email: "bruce0p@gmail.com",
+                     contact_number: "378-233-4392", venue_website: "www.thebrick.com")
 Address.create!(state: "Nebraska", city: "Lincoln", street: "Main st", number: "345", show: show1)
-show2 = Show.create!(pay: 200, date: "2020-10-10", load_in: "16:30", set: "20:00", lodging: "Bob's uncle's house", tour: tour1, expected_merch: 35)
+show2 = Show.create!(pay: 200, date: "2020-10-10", load_in: "16:30", set: "20:00",
+                     lodging: "Bob's uncle's house", tour: tour1, expected_merch: 35,
+                     wifi_net: "Belkin09", wifi_pw: "Password01",
+                     laundry: false, showers: true, contact_name: "Bruce Saverino", contact_email: "bruce0p@gmail.com",
+                     contact_number: "378-233-4392", venue_website: "drout.com")
 Address.create!(state: "Iowa", city: "Iowa City", street: "Falls st", number: "22", show: show2)
-show3 = Show.create!(description: "MPLS Calling Festival", pay: 700, date: "2020-10-3", load_in: "17:00", set: "17:30", lodging: "Minneapolis Holiday Inn", tour: tour1, expected_merch: 100)
+show3 = Show.create!(description: "MPLS Calling Festival", pay: 700, date: "2020-10-3",
+                     load_in: "17:00", set: "17:30", lodging: "Minneapolis Holiday Inn",
+                     tour: tour1, expected_merch: 100,
+                     wifi_net: "Belkin09", wifi_pw: "Password01",
+                     laundry: false, showers: true, contact_name: "Bruce Saverino", contact_email: "bruce0p@gmail.com",
+                     contact_number: "378-233-4392", venue_website: "www.partycenter.com")
 Address.create!(state: "Minnesota", city: "Minneapolis", street: "High st", number: "2200", show: show3)

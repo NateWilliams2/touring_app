@@ -51,6 +51,14 @@ ActiveRecord::Schema.define(version: 2019_10_13_221721) do
     t.text "description"
     t.date "date"
     t.integer "tour_id"
+    t.string "wifi_net"
+    t.string "wifi_pw"
+    t.boolean "laundry"
+    t.boolean "showers"
+    t.string "contact_name"
+    t.string "contact_email"
+    t.string "contact_number"
+    t.string "venue_website"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "address"

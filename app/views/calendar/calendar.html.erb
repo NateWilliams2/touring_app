@@ -14,6 +14,11 @@
               <p>Address: <%=show.address.fmt_address()%></p>
               <p>Load-in: <%=format_time(show.load_in)%></p>
               <p>Set time: <%=format_time(show.set)%></p>
+              <p>Contact: <%=show.contact_name%> Email: <%=show.contact_email%> Number: <%=show.contact_number%></p>
+              <p>Wifi: <%=show.wifi_net%> Password: <%=show.wifi_pw%></p>
+              <p>There is<%=show.laundry ? " " : " not "%>laundry at the venue</p>
+              <p>There are<%=show.showers ? " " : " not "%>showers at the venue</p>
+              <p><a href=http://<%=show.venue_website%>>Venue Website</a></p>
               <%if show.description != nil%>
                 <p>Notes: <%=show.description%></p>
               <%end%>
