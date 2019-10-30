@@ -5,22 +5,13 @@
     <%= favicon_link_tag asset_path(yield(:icon_path)) %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
+  <%= render 'layouts/header' %>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
   <h1><%=yield(:title)%></h1>
-  <ul class="nav">
-  <li><a href="/home">Home</a></li>
-  <li><a href="/calendar">Touring Calendar</a></li>
-  <li><a href="/band">Band Members</a></li>
-  <li><a href="/finances">Tour Finances</a></li>
-</ul>
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-    <%= yield %>
-  </body>
+  <%= yield %>
 </html>

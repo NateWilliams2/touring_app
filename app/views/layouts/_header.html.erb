@@ -1,0 +1,17 @@
+<header>
+  <nav>
+    <ul class="nav">
+      <li><a href="/home">Home</a></li>
+      <% if logged_in? %>
+        <li><a href="/calendar">Touring Calendar</a></li>
+        <li><a href="/band">Band Members</a></li>
+        <li><a href="/finances">Tour Finances</a></li>
+        <li><%= link_to "My Profile", current_user %></li>
+        <li><%= link_to "Log out", logout_path, method: :delete %></li>
+      <%else%>
+        <li><%= link_to "Log in", login_path %></li>
+      <%end%>
+    </ul>
+    
+  </nav>
+</header>
