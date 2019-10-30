@@ -1,6 +1,7 @@
 <% provide(:title, "Touring Calendar") %>
 <!--image from https://pixabay.com/illustrations/calendar-icon-minimalist-time-1559935/-->
 <% provide(:icon_path, "calendar.png") %>
+<h2><p><%= link_to "Create New Tour!", tour_new_path %></p></h2>
 <ul class="calendar">
   <%if !@tours.blank?%>
     <% for tour in @tours %>
