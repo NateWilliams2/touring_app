@@ -88,6 +88,10 @@ p {
   color: #555;
 }
 
+.alert-success {
+  text-align: center;
+}
+
 .card {
   /* Add shadows to create the "card" effect */
   box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2);
@@ -112,7 +116,32 @@ p {
   margin-bottom: 0;
 }
 
+.centered {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 20px; /* 5px rounded corners */
+    padding: 0px auto;
+    margin: 5px 3% auto;
+    text-align: center;
+}
+
 .content {
-  padding: 0px 16px;
+  padding: 0px 4px;
   margin: 0 auto;
 }
+
+  /* forms */
+
+  input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+  }
+  
+  input {
+    height: auto !important;
+  }
+
+  

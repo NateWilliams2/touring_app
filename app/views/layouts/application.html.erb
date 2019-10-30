@@ -18,6 +18,9 @@
   <li><a href="/band">Band Members</a></li>
   <li><a href="/finances">Tour Finances</a></li>
 </ul>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
     <%= yield %>
   </body>
 </html>
