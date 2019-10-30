@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_015316) do
+ActiveRecord::Schema.define(version: 2019_10_30_022603) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "state"
@@ -70,10 +70,12 @@ ActiveRecord::Schema.define(version: 2019_10_30_015316) do
     t.date "start_date"
     t.date "end_date"
     t.string "title"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "member"
     t.integer "show"
+    t.index ["user_id"], name: "index_tours_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -82,6 +84,7 @@ ActiveRecord::Schema.define(version: 2019_10_30_015316) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "tour"
   end
 
 end

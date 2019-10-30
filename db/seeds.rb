@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: "User1", email: "test@example.com", password: "password01", password_confirmation: "password01")
-User.create(name: "User2", email: "test@example.com", password: "password02", password_confirmation: "password02")
+user1 = User.create(name: "User1", email: "test@example.com", password: "password01", password_confirmation: "password01")
+user2 = User.create(name: "User2", email: "test@example.com", password: "password02", password_confirmation: "password02")
 
 Quotation.create(quote: "The part you don't expect when you start out is all the people who come into your life wanting a piece of you, not caring about your wellbeing. The insane schedule is very difficult. Touring looks very glamourous but it's hard and gruelling - the travelling, the meet-and-greets - it was too crazy.",
                  author: "Cheryl James")
@@ -22,8 +22,8 @@ Quotation.create(quote: "I make my money off of touring and merchandise. And I'm
 Quotation.create(quote: "The touring was crazy, it was a lot of work. But I enjoyed it.",
                  author: "Adam Ant")
 
-tour1 = Tour.create!(title: "Fall 2020 tour", start_date: "2020-09-12", end_date: "2020-12-14")
-tour2 = Tour.create!(title: "Fall 2021 tour", start_date: "2020-09-12", end_date: "2020-12-14")
+tour1 = Tour.create!(title: "Fall 2020 tour", start_date: "2020-09-12", end_date: "2020-12-14", user: user1)
+tour2 = Tour.create!(title: "Fall 2021 tour", start_date: "2020-09-12", end_date: "2020-12-14", user: user2)
 
 Member.create!(name: "Bob", role: "Bass", pay: 15, pay_by_percent: true, tour: tour1, musician: true, phone_number: "345-222-3452")
 Member.create!(name: "Alice", role: "Drums", pay: 15, pay_by_percent: true, tour: tour1, musician: true, phone_number: "345-222-3452")
