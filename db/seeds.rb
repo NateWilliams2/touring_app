@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create(name: "User1", email: "test@example.com", password: "password01", password_confirmation: "password01")
+User.create(name: "User2", email: "test@example.com", password: "password02", password_confirmation: "password02")
+
 Quotation.create(quote: "The part you don't expect when you start out is all the people who come into your life wanting a piece of you, not caring about your wellbeing. The insane schedule is very difficult. Touring looks very glamourous but it's hard and gruelling - the travelling, the meet-and-greets - it was too crazy.",
                  author: "Cheryl James")
 Quotation.create(quote: "A lot of people can't stand touring but to me it's like breathing. I do it because I'm driven to do it",
