@@ -18,7 +18,7 @@
               <p>Wifi: <%=show.wifi_net%> Password: <%=show.wifi_pw%></p>
               <p>There is<%=show.laundry ? " " : " not "%>laundry at the venue</p>
               <p>There are<%=show.showers ? " " : " not "%>showers at the venue</p>
-              <p><a href=http://<%=show.venue_website%>>Venue Website</a></p>
+              <p><%=link_to "Venue Website", URI::HTTP.build({:host => show.venue_website}).to_s, target: "_blank"%>
               <%if show.description != nil%>
                 <p>Notes: <%=show.description%></p>
               <%end%>

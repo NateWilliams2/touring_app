@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/new'
   get '/home', to: 'home#home', as: :home
   get '/finances', to: 'finances#finances', as: :finances
   get '/calendar', to: 'calendar#calendar', as: :calendar

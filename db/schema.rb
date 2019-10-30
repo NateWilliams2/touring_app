@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_10_13_221721) do
     t.string "name"
     t.string "role"
     t.integer "pay"
+    t.string "phone_number"
     t.boolean "pay_by_percent"
     t.boolean "musician"
     t.integer "tour_id"
