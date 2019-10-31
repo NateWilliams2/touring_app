@@ -7,6 +7,7 @@
     <% for tour in @tours %>
       <div class="tour">
         <h1><%=tour.title%></h1>
+        <h2><p><%= link_to "Create New Show!", show_new_path %></p></h2>
         <%for show in get_shows(tour.id) %>
           <div class="card">
             <div class="content">

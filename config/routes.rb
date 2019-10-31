@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   get "/create_tour", to: "tour#new"
   post "/create_tour", to: "tour#create"
+  get "/create_show", to: "show#new"
+  post "/create_show", to: "show#create"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
