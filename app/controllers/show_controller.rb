@@ -6,7 +6,7 @@ class ShowController < ApplicationController
   def create
     @show = Show.new(show_params)
     if @show.save
-      flash[:success] = "Saving Show on" + @show.date.to_s
+      flash[:success] = "Saving Show in " + @show.address.city
       redirect_to "/calendar"
     else
       render "new"
@@ -17,6 +17,6 @@ class ShowController < ApplicationController
     params.require(:show).permit(:tour_id, :description, :pay, :date,
                                  :load_in, :set, :lodging, :expected_merch, :wifi_net, :wifi_pw,
                                  :laundry, :showers, :contact_name, :contact_email,
-                                 :contact_number, :venue_website)
+                                 :contact_number, :venue_website, :address_attributes => [:id, :state, :city, :street, :number])
   end
 end

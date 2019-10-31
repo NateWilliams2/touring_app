@@ -6,56 +6,52 @@
     <div class="content">
       <%= form_for(@show, url: create_show_path) do |f| %>
         <%= render 'shared/show_error_messages' %>
-
         <p><%= f.label :tour_id %>
           <%= f.collection_select :tour_id, Tour.where(user_id: current_user).order(:title),:id, :title%></p>
-
         <p><%= f.label :description %>
           <%= f.text_field :description, class: 'form-control' %></p>
-
         <p><%= f.label :date %>
           <%= f.date_field :date, class: 'form-control' %></p>
-
+        <p>Address:</p>
+        <ul>
+          <%= f.fields_for :address, @show.build_address do |address| %>
+              <%= address.label :state %>
+              <%= address.text_field :state %>
+              <%= address.label :city %>
+              <%= address.text_field :city %>
+              <%= address.label :street %>
+              <%= address.text_field :street %>
+              <%= address.label :number %>
+              <%= address.number_field :number %>
+          <% end %>
+        </ul>
         <p><%= f.label :load_in_time %>
-          <%= f.time_field :load_in, class: 'form-control' %></p>
-
+          <%= f.time_field :load_in, :required => true, class: 'form-control' %></p>
         <p><%= f.label :set_time %>
-          <%= f.time_field :set, class: 'form-control' %></p>
-
+          <%= f.time_field :set, :required => true, class: 'form-control' %></p>
         <p><%= f.label :pay %>
           <%= f.number_field :pay, class: 'form-control' %></p>
-
         <p><%= f.label :expected_merch %>
           <%= f.number_field :expected_merch, class: 'form-control' %></p>
-
         <p><%= f.label :venue_website %>
           <%= f.url_field :venue_website, class: 'form-control' %></p>
-
         <p><%= f.label :wifi_network %>
           <%= f.text_field :wifi_net, class: 'form-control' %></p>
-
         <p><%= f.label :wifi_password %>
           <%= f.text_field :wifi_pw, class: 'form-control' %></p>
-
         <p><%= f.label :contact_name %>
           <%= f.text_field :contact_name, class: 'form-control' %></p>
-
         <p><%= f.label :contact_email %>
           <%= f.email_field :contact_email, class: 'form-control' %></p>
-
         <p><%= f.label :contact_number %>
           <%= f.telephone_field :contact_number, class: 'form-control' %></p>
-
         <p><%= f.label :showers %>
           <%= f.check_box :showers, class: 'form-control' %></p>
-
         <p><%= f.label :laundry %>
           <%= f.check_box :laundry, class: 'form-control' %></p>
-
         <p><%= f.label :lodging %>
           <%= f.text_field :lodging, class: 'form-control' %></p>
-
-        <p><%= f.submit "Create Tour", class: "btn btn-primary" %></p>
+        <p><%= f.submit "Create Show", class: "btn btn-primary" %></p>
       <% end %>
     </div>
   </div>

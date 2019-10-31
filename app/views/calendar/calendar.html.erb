@@ -18,9 +18,9 @@
               <p>Set time: <%=format_time(show.set)%></p>
               <p>Contact: <%=show.contact_name%> Email: <%=show.contact_email%> Number: <%=show.contact_number%></p>
               <p>Wifi: <%=show.wifi_net%> Password: <%=show.wifi_pw%></p>
-              <p>There is<%=show.laundry ? " " : " not "%>laundry at the venue</p>
-              <p>There are<%=show.showers ? " " : " not "%>showers at the venue</p>
-              <p><%=link_to "Venue Website", URI::HTTP.build({:host => show.venue_website}).to_s, target: "_blank"%>
+              <p>There is<%=show.laundry ? " " : " no "%>laundry access</p>
+              <p>There is<%=show.showers ? " " : " no "%>shower access</p>
+              <p><%=link_to "Venue Website", show.venue_website.to_s, target: "_blank"%>
               <%if show.description != nil%>
                 <p>Notes: <%=show.description%></p>
               <%end%>

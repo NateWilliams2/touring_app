@@ -5,6 +5,7 @@
   <%if !@tours.blank?%>
     <% for tour in @tours %>
       <h1><%=tour.title%></h1>
+      <h2><p><%= link_to "Add New Member!", member_new_path %></p></h2>
       <% for member in get_members(tour.id) %>
         <div class="card">
           <div class="content">

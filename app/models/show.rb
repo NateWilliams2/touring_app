@@ -1,6 +1,7 @@
 class Show < ApplicationRecord
   has_one :address
   belongs_to :tour, foreign_key: "tour_id"
+  accepts_nested_attributes_for :address
   validates :date, presence: true
   validates :lodging, length: { maximum: 50 }
   validates :wifi_net, length: { maximum: 50 }

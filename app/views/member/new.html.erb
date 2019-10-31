@@ -1,2 +1,27 @@
-<h1>Member#new</h1>
-<p>Find me in app/views/member/new.html.erb</p>
+<% provide(:title, "New Band Member") %>
+<!--image from https://pixabay.com/illustrations/band-silhouette-drums-guitar-1595310/-->
+<% provide(:icon_path, "band.png") %>
+<div class="card">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="content">
+      <%= form_for(@member, url: create_member_path) do |f| %>
+        <%= render 'shared/member_error_messages' %>
+        <p><%= f.label :tour_id %>
+          <%= f.collection_select :tour_id, Tour.where(user_id: current_user).order(:title),:id, :title%></p>
+        <p><%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %></p>
+        <p><%= f.label :musician? %>
+          <%= f.check_box :musician, class: 'form-control' %></p>
+        <p><%= f.label :role %>
+          <%= f.text_field :role, class: 'form-control' %></p>
+        <p><%= f.label :pay %>
+          <%= f.number_field :pay, class: 'form-control' %></p>
+          <p><%= f.label :pay_by_percentage? %>
+          <%= f.check_box :pay_by_percent, class: 'form-control' %></p>
+        <p><%= f.label :phone_number %>
+          <%= f.telephone_field :phone_number, :required => true, class: 'form-control' %></p>
+        <p><%= f.submit "Create Band Member", class: "btn btn-primary" %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
