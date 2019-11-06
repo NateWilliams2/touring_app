@@ -132,6 +132,14 @@ p {
   margin: 0 auto;
 }
 
+a {
+  color: #337AB7;
+}
+
+a:hover {
+  color: rgb(3, 52, 95)
+}
+
   /* forms */
 
   input, textarea, select, .uneditable-input {
