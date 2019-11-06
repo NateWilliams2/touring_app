@@ -1,7 +1,6 @@
 <% provide(:title, "Sign In") %>
 <!--image from https://www.iconexperience.com/v_collection/icons/?icon=user_new-->
 <% provide(:icon_path, "new_user.png") %>
-<div class="card">
   <div class="col-md-6 col-md-offset-3">
     <div class="content">
       <%= form_for(:session, url: login_path) do |f| %>
@@ -14,4 +13,3 @@
       <p>New user? <%= link_to "Sign up now!", signup_path %></p>
     </div>
   </div>
-</div>
