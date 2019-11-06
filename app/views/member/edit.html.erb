@@ -1,9 +1,9 @@
-<% provide(:title, "New Band Member") %>
+<% provide(:title, "Edit Band Member") %>
 <!--image from https://pixabay.com/illustrations/band-silhouette-drums-guitar-1595310/-->
 <% provide(:icon_path, "band.png") %>
   <div class="col-md-6 col-md-offset-3">
     <div class="content">
-      <%= form_for(@member, url: create_member_path) do |f| %>
+      <%= form_for(@member, url: edit_member_path) do |f| %>
         <%= render 'shared/member_error_messages' %>
         <p><%= f.label :tour_id %>
           <%= f.collection_select :tour_id, Tour.where(user_id: current_user).order(:title),:id, :title%></p>
@@ -19,7 +19,7 @@
           <%= f.check_box :pay_by_percent, class: 'form-control' %></p>
         <p><%= f.label :phone_number %>
           <%= f.telephone_field :phone_number, :required => true, class: 'form-control' %></p>
-        <p><%= f.submit "Create Band Member", class: "btn btn-primary" %></p>
+        <p><%= f.submit "Save changes", class: "btn btn-primary" %></p>
       <% end %>
     </div>
   </div>

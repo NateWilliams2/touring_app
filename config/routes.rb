@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   post "/create_show", to: "show#create"
   get "/create_member", to: "member#new"
   post "/create_member", to: "member#create"
+  edit "/member/:id/edit", to: "member#edit"
+  patch "/member/:id", to: "member#update"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

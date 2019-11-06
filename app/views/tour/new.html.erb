@@ -1,7 +1,6 @@
 <% provide(:title, "New Tour") %>
 <!--image from https://icon-library.net/icon/tour-icon-25.html-->
 <% provide(:icon_path, "tour.png") %>
-<div class="card">
   <div class="col-md-6 col-md-offset-3">
     <div class="content">
       <%= form_for(@tour, url: create_tour_path) do |f| %>
@@ -20,4 +19,3 @@
       <% end %>
     </div>
   </div>
-</div>

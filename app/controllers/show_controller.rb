@@ -13,6 +13,10 @@ class ShowController < ApplicationController
     end
   end
 
+  def edit
+    @show = Show.find(params[:id])
+  end
+
   def show_params
     params.require(:show).permit(:tour_id, :description, :pay, :date,
                                  :load_in, :set, :lodging, :expected_merch, :wifi_net, :wifi_pw,
