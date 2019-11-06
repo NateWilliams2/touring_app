@@ -9,14 +9,21 @@
       <% for member in get_members(tour.id) %>
         <div class="card">
           <div class="content">
-            <p><b><%=member.role%>: <%=member.name%></b></p>
-            <i> gets paid
-              <%if member.pay_by_percent%>
-                <%=member.pay%>%</i>
-            <%else%>
-              $<%=member.pay%></i>
-          <%end%>
-          <p>Phone Number: <%=member.phone_number%></p>
+              <div class="container">
+                <h3><b class="text-left"><%=member.role%>: <%=member.name%></b></h3>
+                <div class="row">
+                  <div class="col-sm-6">            
+                    <p class="text-center">gets paid
+                    <%if member.pay_by_percent%>
+                      <%=member.pay%>% of gross
+                    <%else%>
+                      $<%=member.pay%>/show
+                    <%end%></p></div>
+                  <div class="col-sm-6"><p class="text-center">Phone Number: <%=member.phone_number%></p></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     <%end%>

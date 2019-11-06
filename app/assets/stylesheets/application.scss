@@ -98,7 +98,7 @@ p {
   box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 20px; /* 5px rounded corners */
-  padding: 0px auto;
+  padding: 0 0 1% 0;
   margin: 5px 3% auto;
 }
 
@@ -128,7 +128,7 @@ p {
 }
 
 .content {
-  padding: 0px 4px;
+  padding: 0px 0px;
   margin: 0 auto;
 }
 
@@ -145,4 +145,7 @@ p {
     height: auto !important;
   }
 
-  
+  table{
+    margin: .5%;
+    padding: .5%;
+  }

@@ -11,23 +11,31 @@
         <%for show in get_shows(tour.id) %>
           <div class="card">
             <div class="content">
-              <p><b><%=format_date(show.date) + ": " + show.address.city + " " + show.address.state%></b></p>
-              <p>Lodging: <%=show.lodging%></p>
-              <p>Address: <%=show.address.fmt_address()%></p>
-              <p>Load-in: <%=format_time(show.load_in)%></p>
-              <p>Set time: <%=format_time(show.set)%></p>
-              <p>Contact: <%=show.contact_name%> Email: <%=show.contact_email%> Number: <%=show.contact_number%></p>
-              <p>Wifi: <%=show.wifi_net%> Password: <%=show.wifi_pw%></p>
-              <p>There is<%=show.laundry ? " " : " no "%>laundry access</p>
-              <p>There is<%=show.showers ? " " : " no "%>shower access</p>
-              <p><%=link_to "Venue Website", show.venue_website.to_s, target: "_blank"%>
-              <%if show.description != nil%>
-                <p>Notes: <%=show.description%></p>
-              <%end%>
+              <div class="container">
+                <h3><b class="text-left"><%=format_date(show.date) + ": " + show.address.city + " " + show.address.state%></b></h3> 
+                <div class="row">
+                  <div class="col-sm-4"><p>Address: <%=show.address.fmt_address()%></p></div>
+                  <div class="col-sm-4"><p>Load-in: <%=format_time(show.load_in)%></p></div>
+                  <div class="col-sm-4"><p>Set time: <%=format_time(show.set)%></p></div>
+                  <div class="col-sm-4"><p>Contact: <%=show.contact_name%></p></div>
+                  <div class="col-sm-4"><p>Email: <%=show.contact_email%></p></div>
+                  <div class="col-sm-4"><p>Number: <%=show.contact_number%></p></div>
+                  <div class="col-sm-4"><p>Lodging: <%=show.lodging%></p></div>
+                  <div class="col-sm-4"><p><%=link_to "Venue Website", show.venue_website.to_s, target: "_blank"%></div>
+                  <div class="col-sm-4"><p>Wifi: <%=show.wifi_net%> Password: <%=show.wifi_pw%></p></div>
+                  <div class="col-sm-4"><p>There is<%=show.laundry ? " " : " no "%>laundry access</p></div>
+                  <div class="col-sm-4"><p>There is<%=show.showers ? " " : " no "%>shower access</p></div>
+                  <div class="col-sm-12">              
+                    <%if show.description != ""%>
+                      <p>Notes: <%=show.description%></p>
+                    <%end%>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </ul>

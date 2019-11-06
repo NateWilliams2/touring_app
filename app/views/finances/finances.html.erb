@@ -4,51 +4,55 @@
 <div class="finances">
   <%if !@tours.blank?%>
     <% for tour in @tours %>
-      <% show_income = get_tour_show_income(tour.id)%>
-      <% merch_income = get_tour_merch_income(tour.id)%>
-      <%if show_income > 0 || merch_income > 0%>
-        <h1><%=tour.title%></h1>
-        <h3>Tour Income</h3>
-        <table class="tour_income">
-          <tr>
-            <td>Expected income from shows: </td>
-            <td>$<%=show_income%></td>
-          </tr>
-          <tr>
-            <td>Expected income from merch sales: </td>
-            <td>$<%=merch_income%></td>
-          </tr>
-          <tr>
-            <td>Expected gross income: </td>
-            <td>$<%=gross = show_income + merch_income%></td>
-          </tr>
-        </table>
-        <h3>Band Payment</h3>
-        <table class="band_payment">
-          <tr>
-            <th>Name</th>
-            <th>Role</th>
-            <th>Wages per show</th>
-            <th>Total Wages</th>
-          </tr>
-          <% for member in get_members(tour.id) %>
+      <%if get_shows(tour.id) != nil%>
+        <% show_income = get_tour_show_income(tour.id)%>
+        <% merch_income = get_tour_merch_income(tour.id)%>
+        <% gross = show_income + merch_income%>
+        <% wage_expenses = get_total_wage_expenses(tour.id, gross)%>
+        <%if show_income > 0 || merch_income > 0%>
+          <h1><%=tour.title%></h1>
+          <h3>Tour Income</h3>
+          <table class="tour_income" border="1">
             <tr>
-              <td><%=member.name%></td>
-              <td><%=member.role%></td>
-              <td><%=if member.pay_by_percent 
-                member.pay.to_s + "%"
-              else "$" + member.pay.to_s
-              end%></td>
-              <td>$<%=if member.pay_by_percent 
-                gross*member.pay/100
-              else member.pay*get_shows(tour.id).count
-              end%></td>
+              <td>Income from shows: </td>
+              <td>$<%=show_income%></td>
             </tr>
-          <%end%>
-        </table>
-      <%else%>
-        <h1><%=tour.title%></h1>
-        <h3>This tour will make you no money :'(</h3>
+            <tr>
+              <td>Income from merch sales: </td>
+              <td>$<%=merch_income%></td>
+            </tr>
+            <tr>
+              <td>Expected gross income: </td>
+              <td>$<%=gross%></td>
+            </tr>
+            <tr>
+              <td>Net income after wages: </td>
+              <td>$<%=gross - wage_expenses%></td>
+            </tr>
+          </table>
+          <h3>Band Payment</h3>
+          <table class="band_payment" border="1">
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Wages</th>
+              <th>Total Wages</th>
+            </tr>
+            <% for member in get_members(tour.id) %>
+              <tr>
+                <td><%=member.name%></td>
+                <td><%=member.role%></td>
+                <td><%=if member.pay_by_percent 
+                  member.pay.to_s + "% of gross"
+                else "$" + member.pay.to_s + " per show"
+                end%></td>
+                <td>$<%=get_total_member_pay(member, tour.id, gross)%></td>              </tr>
+            <%end%>
+          </table>
+        <%else%>
+          <h1><%=tour.title%></h1>
+          <h3>This tour will make you no money :'(</h3>
+        <%end%>
       <%end%>
     <%end%>
   <%end%>
