@@ -7,12 +7,12 @@
     <% for tour in @tours %>
       <div class="tour">
         <h1><%=tour.title%></h1>
-        <h2><p><%= link_to "Create New Show!", show_new_path %></p></h2>
+        <h2><p><%= link_to "Create New Show!", show_new_path %> | <a href="tour/<%=tour.id%>/edit">Edit <%=tour.title%></a> | <a href="tour/<%=tour.id%>/delete">Delete <%=tour.title%></a></p></h2>
         <%for show in get_shows(tour.id) %>
           <div class="card">
             <div class="content">
               <div class="container">
-                <h3><b class="text-left"><%=format_date(show.date) + ": " + show.address.city + " " + show.address.state%></b></h3> 
+                <h3><b class="text-left"><%=format_date(show.date) + ": " + show.address.city + " " + show.address.state%> <small><a href="show/<%=show.id%>/edit">Edit <%=show.address.city%> Show</a> | <a href="show/<%=show.id%>/delete">Delete <%=show.address.city%> Show</a></small></b></h3> 
                 <div class="row">
                   <div class="col-sm-4"><p>Address: <%=show.address.fmt_address()%></p></div>
                   <div class="col-sm-4"><p>Load-in: <%=format_time(show.load_in)%></p></div>

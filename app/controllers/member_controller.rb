@@ -27,6 +27,12 @@ class MemberController < ApplicationController
     end
   end
 
+  def destroy
+    Member.find(params[:id]).destroy
+    flash[:success] = "Band Member deleted"
+    redirect_to "/band"
+  end
+
   def member_params
     params.require(:member).permit(:tour_id, :name, :role, :pay, :phone_number, :pay_by_percent, :musician)
   end

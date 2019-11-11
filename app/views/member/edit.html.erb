@@ -3,7 +3,7 @@
 <% provide(:icon_path, "band.png") %>
   <div class="col-md-6 col-md-offset-3">
     <div class="content">
-      <%= form_for(@member, url: edit_member_path) do |f| %>
+      <%= form_for(@member, url: member_path) do |f| %>
         <%= render 'shared/member_error_messages' %>
         <p><%= f.label :tour_id %>
           <%= f.collection_select :tour_id, Tour.where(user_id: current_user).order(:title),:id, :title%></p>
