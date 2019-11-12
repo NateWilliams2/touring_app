@@ -1,9 +1,9 @@
-<% provide(:title, "New Show") %>
+<% provide(:title, "Edit Show") %>
 <!--image from https://www.flaticon.com/free-icon/concert_431247-->
 <% provide(:icon_path, "show.png") %>
   <div class="col-md-6 col-md-offset-3">
     <div class="content">
-      <%= form_for(@show, url: create_show_path) do |f| %>
+      <%= form_for(@show, url: show_path) do |f| %>
         <%= render 'shared/show_error_messages' %>
         <p><%= f.label :tour_id %>
           <%= f.collection_select :tour_id, Tour.where(user_id: current_user).order(:title),:id, :title%></p>
@@ -13,7 +13,7 @@
           <%= f.date_field :date, class: 'form-control' %></p>
         <p>Address:</p>
         <ul>
-          <%= f.fields_for :address, @show.build_address do |address| %>
+          <%= f.fields_for :address, @show.address do |address| %>
               <%= address.label :state %>
               <%= address.text_field :state %>
               <%= address.label :city %>
@@ -50,7 +50,7 @@
           <%= f.check_box :laundry, class: 'form-control' %></p>
         <p><%= f.label :lodging %>
           <%= f.text_field :lodging, class: 'form-control' %></p>
-        <p><%= f.submit "Create Show", class: "btn btn-primary" %></p>
+        <p><%= f.submit "Save Changes", class: "btn btn-primary" %></p>
       <% end %>
     </div>
   </div>
