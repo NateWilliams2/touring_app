@@ -35,17 +35,17 @@ show1 = Show.create!(description: "First show!", pay: 400, date: "2020-09-12",
                      tour: tour1, expected_merch: 250, wifi_net: "Belkin09", wifi_pw: "Password01",
                      laundry: false, showers: true, contact_name: "Bruce Saverino", contact_email: "bruce0p@gmail.com",
                      contact_number: "378-233-4392", venue_website: "http://www.thebrick.com")
-Address.create!(state: "Nebraska", city: "Lincoln", street: "Main st", number: "345", show: show1)
+Address.create!(state: "Nebraska", city: "Lincoln", street_address: "345 Main st", show: show1)
 show2 = Show.create!(pay: 200, date: "2020-10-10", load_in: "16:30", set: "20:00",
                      lodging: "Bob's uncle's house", tour: tour1, expected_merch: 35,
                      wifi_net: "Belkin09", wifi_pw: "Password01",
                      laundry: false, showers: true, contact_name: "Bruce Saverino", contact_email: "bruce0p@gmail.com",
                      contact_number: "378-233-4392", venue_website: "http://drout.com")
-Address.create!(state: "Iowa", city: "Iowa City", street: "Falls st", number: "22", show: show2)
+Address.create!(state: "Iowa", city: "Iowa City", street_address: "22 Falls st", show: show2)
 show3 = Show.create!(description: "MPLS Calling Festival", pay: 700, date: "2020-10-3",
                      load_in: "17:00", set: "17:30", lodging: "Minneapolis Holiday Inn",
                      tour: tour1, expected_merch: 100,
                      wifi_net: "Belkin09", wifi_pw: "Password01",
                      laundry: false, showers: true, contact_name: "Bruce Saverino", contact_email: "bruce0p@gmail.com",
                      contact_number: "378-233-4392", venue_website: "http://www.partycenter.com")
-Address.create!(state: "Minnesota", city: "Minneapolis", street: "High st", number: "2200", show: show3)
+Address.create!(state: "Minnesota", city: "Minneapolis", street_address: "2200 High st", show: show3)

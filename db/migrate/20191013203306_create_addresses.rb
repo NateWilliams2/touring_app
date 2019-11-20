@@ -3,8 +3,7 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
     create_table :addresses do |t|
       t.string :state
       t.string :city
-      t.string :street
-      t.integer :number
+      t.string :street_address
       t.references :show
 
       t.timestamps
