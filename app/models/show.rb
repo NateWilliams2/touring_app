@@ -7,6 +7,8 @@ class Show < ApplicationRecord
   validates :lodging, length: { maximum: 50 }
   validates :wifi_net, length: { maximum: 50 }
   validates :wifi_pw, length: { maximum: 50 }
+  validates :load_in, format: { with: $TIME_REGEX }
+  validates :set, format: { with: $TIME_REGEX }
   validates :contact_name, length: { maximum: 50 }
   validates :contact_email, length: { maximum: 50 }, format: { with: $EMAIL_REGEX }
   validates :contact_number, length: { maximum: 50 }, format: { with: $PHONE_REGEX }

@@ -3,4 +3,5 @@ class Member < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
   validates :role, presence: true, length: { maximum: 50 }
   validates :phone_number, format: { with: $PHONE_REGEX }
+  validates :pay, presence: true
 end

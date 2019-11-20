@@ -31,7 +31,7 @@ Member.create!(name: "Jim", role: "Merch", pay: 15, pay_by_percent: true, tour: 
 Member.create!(name: "Beth", role: "Manager", pay: 300, pay_by_percent: false, tour: tour1, musician: false, phone_number: "345-222-3452")
 
 show1 = Show.create!(description: "First show!", pay: 400, date: "2020-09-12",
-                     load_in: "17:30", set: "21:00", lodging: "Lincoln Intercontinental",
+                     load_in: "17:30pm", set: "21:00pm", lodging: "Lincoln Intercontinental",
                      tour: tour1, expected_merch: 250, wifi_net: "Belkin09", wifi_pw: "Password01",
                      laundry: false, showers: true, contact_name: "Bruce Saverino", contact_email: "bruce0p@gmail.com",
                      contact_number: "378-233-4392", venue_website: "http://www.thebrick.com")
