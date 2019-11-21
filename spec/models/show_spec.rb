@@ -37,7 +37,7 @@ RSpec.describe Show, :type => :model do
     expect(subject).to be_valid
   end
   it "is still valid without contact" do
-    subject.contact = nil
+    subject.contact_name = nil
     expect(subject).to be_valid
   end
   it "is still valid without wifi_pw" do
@@ -68,13 +68,13 @@ RSpec.describe Show, :type => :model do
     subject.date = nil
     expect(subject).to_not be_valid
   end
-  it "is not valid with invalid load_in" do
-    subject.load_in = "12:12:12:aa"
-    expect(subject).to_not be_valid
+  it "is still valid without load_in" do
+    subject.load_in = nil
+    expect(subject).to be_valid
   end
-  it "is not valid with invalid set" do
-    subject.set = "12:23:pp"
-    expect(subject).to_not be_valid
+  it "is still valid without set" do
+    subject.set = nil
+    expect(subject).to be_valid
   end
   it "is still valid without valid lodging" do
     subject.lodging = nil
