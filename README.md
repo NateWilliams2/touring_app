@@ -19,7 +19,7 @@ bundle exec db:migrate
 bundle exec db:seed
 
 * How to run the test suite
-bundle exec rspec
+bundle exec rspec spec --format documentation
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
