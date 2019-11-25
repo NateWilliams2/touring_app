@@ -2,7 +2,13 @@
 <!--image from https://www.flaticon.com/free-icon/home_25694-->
 <% provide(:icon_path, "home.png") %>
 
-<p class = "bquote">
-  &ldquo;<%=@text%>&rdquo;
-</p>
-<figcaption><%=@author%></figcaption>
+
+
+  <%= image_tag("concert.jpg", alt:"Background image of slightly blurry audience dancing at a rock concert")%>
+  <!--image from https://pixnio.com/fauna-animals/birds/heron-bird/crowned-herons/crowd-rock-concert-people-night-music-->
+  <div class = "quote-text">
+  <p class = "bquote">
+    &ldquo;<%=@text%>&rdquo;
+  </p>
+  <figcaption><%=@author%></figcaption>
+  </div>
