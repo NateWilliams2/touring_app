@@ -1,3 +1,6 @@
+ <%= javascript_include_tag "application" %>
+ <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
   <head>
   <title><%= full_title(yield(:title)) %></title>
   <%= favicon_link_tag asset_path(yield(:icon_path)) %>
@@ -9,6 +12,7 @@
 <header>
   <nav>
     <ul class="nav">
+      <div id="myLinks">
       <li><a href="/home">Home</a></li>
       <% if logged_in? %>
         <li><a href="/calendar">Touring Calendar</a></li>
@@ -19,6 +23,11 @@
       <%else%>
         <li><%= link_to "Log in", login_path %></li>
       <%end%>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
     </ul>
   </nav>
 </header>

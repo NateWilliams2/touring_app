@@ -16,15 +16,8 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  body {
-   background-color: #f7dfdf;
+   background-color: #e09f37;
  }
-
- img {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-}
 
  h1 {
   color: rgb(44, 17, 17);
@@ -42,58 +35,6 @@ h3 {
 p {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: medium;
-}
-
-/*The following nav design is adapted from Dominik Biedebach, https://codepen.io/d2k/pen/jEmWXq/ */
- .nav {
-   list-style: none;
-   text-align: center;
- }
- .nav li {
-   display: inline-block;
- }
- .nav li a {
-   display: block;
-   padding: 15px;
-   text-decoration: none;
-   color: #521313;
-   font-weight: 1000;
-   text-transform: uppercase;
-   margin: 0 auto;
- }
- .nav li a,
- .nav li a:after,
- .nav li a:before {
-   transition: all .5s;
- }
- .nav li a:hover {
-   color: #4affd5;
-   text-decoration: underline;
- }
-
- .nav ul {
-  list-style: none;
-  text-align: center;
-}
-.nav ul li {
-  display: inline-block;
-}
-.nav ul li a {
-  display: block;
-  padding: 15px;
-  text-decoration: none;
-  color: #aaa;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin: 0 auto;
-}
-.nav ul li a,
-.nav ul li a:after,
-.nav ul li a:before {
-  transition: all .5s;
-}
-.nav ul li a:hover {
-  color: #555;
 }
 
 .alert-success {
@@ -164,3 +105,82 @@ a:hover {
     margin: .5%;
     padding: .5%;
   }
+  
+      /*The following nav design is adapted from Dominik Biedebach, https://codepen.io/d2k/pen/jEmWXq/ */
+ .nav {
+  list-style: none;
+  text-align: center;
+    }
+    .nav li {
+      display: inline-block;
+    }
+    .nav li a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #521313;
+      font-weight: 1000;
+      text-transform: uppercase;
+      margin: 0 auto;
+    }
+    .nav li a,
+    .nav li a:after,
+    .nav li a:before {
+      transition: all .5s;
+    }
+    .nav li a:hover {
+      color: #4affd5;
+      text-decoration: underline;
+    }
+
+    .nav ul {
+    list-style: none;
+    text-align: center;
+    }
+
+    .nav ul li {
+    display: inline-block;
+    }
+    .nav ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 auto;
+    }
+    .nav ul li a,
+    .nav ul li a:after,
+    .nav ul li a:before {
+    transition: all .5s;
+    }
+    .nav ul li a:hover {
+    color: #555;
+    }
+
+@media only screen and (min-width: 601px) {
+  img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+  }
+
+  .nav a.icon {
+    display: none;
+    }
+}
+//mobile style settings
+@media only screen and (max-width: 600px) {
+  img {
+    height: 800px;
+    object-fit: cover;
+  }
+  .nav a.icon {
+    display: block;
+    }
+
+  #myLinks {
+    display: none;
+  }
+}
