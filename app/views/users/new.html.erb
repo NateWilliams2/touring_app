@@ -1,24 +1,26 @@
 <% provide(:title, "Sign up") %>
 <!--image from https://www.iconexperience.com/v_collection/icons/?icon=user_new-->
 <% provide(:icon_path, "new_user.png") %>
-  <div class="col-md-6 col-md-offset-3">
-    <div class="content">
-      <%= form_for(@user, url: signup_path) do |f| %>
-        <%= render partial: "shared/error_messages", locals: {object: @user} %>
+  <div class="center-box">
+    <div class="login">
+      <div class="content">
+        <%= form_for(@user, url: signup_path) do |f| %>
+          <%= render partial: "shared/error_messages", locals: {object: @user} %>
 
-        <p><%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control' %></p>
+          <p><%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %></p>
 
-        <p><%= f.label :email %>
-          <%= f.email_field :email, class: 'form-control' %></p>
+          <p><%= f.label :email %>
+            <%= f.email_field :email, class: 'form-control' %></p>
 
-        <p><%= f.label :password %>
-          <%= f.password_field :password, class: 'form-control' %></p>
+          <p><%= f.label :password %>
+            <%= f.password_field :password, class: 'form-control' %></p>
 
-        <p><%= f.label :password_confirmation, "Confirm Password" %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %></p>
+          <p><%= f.label :password_confirmation, "Confirm Password" %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %></p>
 
-        <p><%= f.submit "Create my account", class: "btn btn-primary" %></p>
-      <% end %>
-    </div>
+          <p><%= f.submit "Create my account", class: "btn btn-primary" %></p>
+        <% end %>
+      </div>
+      </div>
   </div>
