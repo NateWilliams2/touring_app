@@ -18,7 +18,10 @@
  body {
    background-color: #f7ba58;
    border: 5px solid rgb(168, 118, 51);
-  border-style: ridge;
+   border-style: ridge;
+ }
+ #homePage {
+   border-style: hidden;
  }
 
  h1 {
@@ -125,6 +128,11 @@ a:hover {
       text-transform: uppercase;
       margin: 0 auto;
     }
+
+    #homePage .nav li a{
+      padding: 20px 15px 0 15px;
+    }
+
     .nav li a,
     .nav li a:after,
     .nav li a:before {
@@ -164,6 +172,10 @@ a:hover {
     #myLinks{
       border: 5px solid rgb(168, 118, 51);
       border-style: none none ridge none;
+    }
+
+    #homePage #myLinks{
+      border-style: none;
     }
 
 @media only screen and (min-width: 601px) {
