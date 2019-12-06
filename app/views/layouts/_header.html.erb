@@ -12,6 +12,9 @@
 <header>
   <nav>
     <ul class="nav">
+      <a href="javascript:void(0);" class="icon" onclick="navFunction()" alt="Menu Display/Hide button">
+        <i class="fa fa-bars"></i>
+      </a>
       <div id="myLinks">
       <li><a href="/home">Home</a></li>
       <% if logged_in? %>
@@ -25,9 +28,6 @@
       <%end%>
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
       </div>
-      <a href="javascript:void(0);" class="icon" onclick="navFunction()" alt="Menu Display/Hide button">
-        <i class="fa fa-bars"></i>
-      </a>
     </ul>
   </nav>
 </header>

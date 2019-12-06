@@ -17,6 +17,8 @@
  @import "bootstrap";
  body {
    background-color: #f7ba58;
+   border: 5px solid rgb(168, 118, 51);
+  border-style: ridge;
  }
 
  h1 {
@@ -129,7 +131,7 @@ a:hover {
       transition: all .5s;
     }
     .nav li a:hover {
-      color: #4affd5;
+      color: #b83400;
       text-decoration: underline;
     }
 
@@ -157,6 +159,11 @@ a:hover {
     }
     .nav ul li a:hover {
     color: #555;
+    }
+
+    #myLinks{
+      border: 5px solid rgb(168, 118, 51);
+      border-style: none none ridge none;
     }
 
 @media only screen and (min-width: 601px) {
