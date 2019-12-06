@@ -20,6 +20,11 @@
    border: 5px solid rgb(168, 118, 51);
    border-style: ridge;
  }
+
+ .center-box{
+  text-align: center;
+ }
+
  #homePage {
    border-style: hidden;
  }
@@ -80,8 +85,12 @@ p {
     text-align: center;
 }
 
+.login {
+  text-align: left;
+}
+
 .content {
-  padding: 0px 0px;
+  padding: 1px 1px;
   margin: 0 auto;
 }
 
@@ -179,6 +188,10 @@ a:hover {
     }
 
 @media only screen and (min-width: 601px) {
+  .login{
+    margin: 0 30%;
+  }
+
   img {
     width: 100%;
     height: 800px;
@@ -189,8 +202,19 @@ a:hover {
     display: none;
     }
 }
+
+
+@media only screen and (max-width: 1100px) {
+  .login{
+    margin: 0 15%;
+  }
+}
 //mobile style settings
 @media only screen and (max-width: 600px) {
+  .login{
+    margin: 0 10px;
+  }
+
   img {
     height: 800px;
     object-fit: cover;
@@ -203,3 +227,6 @@ a:hover {
     display: none;
   }
 }
+ .col-md-6{
+   margin-top: 100px;
+ }

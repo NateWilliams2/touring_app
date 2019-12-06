@@ -1,15 +1,19 @@
-<% provide(:title, "Sign In") %>
-<!--image from https://www.iconexperience.com/v_collection/icons/?icon=user_new-->
-<% provide(:icon_path, "new_user.png") %>
-  <div class="col-md-6 col-md-offset-3">
-    <div class="content">
-      <%= form_for(:session, url: login_path) do |f| %>
-        <p><%= f.label :email %>
-          <%= f.email_field :email, class: 'form-control' %></p>
-        <p><%= f.label :password %>
-          <%= f.password_field :password, class: 'form-control' %></p>
-        <p><%= f.submit "Log in", class: "btn btn-primary" %></p>
-      <% end %>
-      <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+<body>
+  <% provide(:title, "Sign In") %>
+  <!--image from https://www.iconexperience.com/v_collection/icons/?icon=user_new-->
+  <% provide(:icon_path, "new_user.png") %>
+  <div class="center-box">
+    <div class="login">
+      <div class="content">
+        <%= form_for(:session, url: login_path) do |f| %>
+          <p><%= f.label :email %>
+            <%= f.email_field :email, class: 'form-control' %></p>
+          <p><%= f.label :password %>
+            <%= f.password_field :password, class: 'form-control' %></p>
+          <p><%= f.submit "Log in", class: "btn btn-primary" %></p>
+        <% end %>
+        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+      </div>
     </div>
   </div>
+</body>
