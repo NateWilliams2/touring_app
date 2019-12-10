@@ -22,7 +22,7 @@
                   <div class="col-sm-4"><p><b>Contact:</b> <%=show.contact_name%>, <a href="tel:<%=show.contact_number%>"><%=show.contact_number%></a></p></div>
                   <div class="col-sm-4"><p><b>Email:</b> <%=show.contact_email%></p></div>
                   <div class="col-sm-4"><p><b>Lodging:</b> <%=show.lodging%></p></div>
-                  <div class="col-sm-4"><p><b><%=link_to "Venue Website", show.venue_website.to_s, target: "_blank"%></b></div>
+                  <div class="col-sm-4"><p><b><%=link_to "Venue Website", add_url(show.venue_website.to_s), target: "_blank"%></b></div>
                   <div class="col-sm-4"><p><b>Wifi:</b> <%=show.wifi_net%> <b>Password:</b> <%=show.wifi_pw%></p></div>
                   <div class="col-sm-4"><p>There is<%=show.laundry ? " " : " no "%>laundry access</p></div>
                   <div class="col-sm-4"><p>There is<%=show.showers ? " " : " no "%>shower access</p></div>

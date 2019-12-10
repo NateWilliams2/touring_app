@@ -13,4 +13,11 @@ module ApplicationHelper
   def get_members(tourid)
     return Member.where("tour_id = '" + tourid.to_s + "'").order("musician").reverse_order
   end
+
+  def add_url(url)
+    unless url[/\Ahttp:\/\//] || url[/\Ahttps:\/\//]
+      return "http://#{url}"
+    end
+    return url
+  end
 end
