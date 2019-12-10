@@ -12,10 +12,10 @@
           <%= f.check_box :musician, class: 'form-control' %></p>
         <p><%= f.label :role %>
           <%= f.text_field :role, class: 'form-control' %></p>
-        <p><%= f.label :pay %>
-          <%= f.number_field :pay, class: 'form-control' %></p>
-          <p><%= f.label :pay_by_percentage? %>
+        <p><%= f.label :gets_paid_by_percentage? %>
           <%= f.check_box :pay_by_percent, class: 'form-control' %></p>
+        <p><%= f.label :pay %> (by percentage or dollar amount per show)
+          <%= f.number_field :pay, class: 'form-control' %></p>
         <p><%= f.label :phone_number %>
           <%= f.telephone_field :phone_number, :required => true, class: 'form-control' %></p>
         <p><%= f.submit submit, class: "btn btn-primary" %></p>
