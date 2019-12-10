@@ -7,13 +7,13 @@
     <% for tour in @tours %>
       <div class="tour">
         <h1><%=tour.title%></h1>
-        <h2><p><%= link_to "Create New Show!", show_new_path %> | <a href="tour/<%=tour.id%>/edit">Edit <%=tour.title%></a> | <%= link_to 'Delete ' + tour.title, tour_path(tour),
+        <h2><p><%= link_to "Create New Show!", show_new_path %> | <a href="tour/<%=tour.id%>/edit">Edit Tour</a> | <%= link_to 'Delete Tour', tour_path(tour),
                     :method => :delete, :data => {:confirm => 'Are you sure?'} %></small></p></h2>
         <%for show in get_shows(tour.id) %>
           <div class="card">
             <div class="content">
               <div class="container">
-                <h3><b class="text-left"><%=format_date(show.date) + ": " + show.address.city + " " + show.address.state%> <small><a href="show/<%=show.id%>/edit">Edit <%=show.address.city%> Show</a> | <%= link_to 'Delete ' + show.address.city, show_path(show),
+                <h3><b class="text-left"><%=format_date(show.date) + ": " + show.address.city + " " + show.address.state%> <small><a href="show/<%=show.id%>/edit">Edit Show</a> | <%= link_to 'Delete Show', show_path(show),
                     :method => :delete, :data => {:confirm => 'Are you sure?'} %></small></b></h3> 
                 <div class="row">
                   <div class="col-sm-4"><p><b>Address:</b> <%=show.address.fmt_address()%></p></div>
@@ -27,7 +27,7 @@
                   <div class="col-sm-4"><p>There is<%=show.laundry ? " " : " no "%>laundry access</p></div>
                   <div class="col-sm-4"><p>There is<%=show.showers ? " " : " no "%>shower access</p></div>
                   <div class="col-sm-12">              
-                    <%if show.description != ""%>
+                    <%if show.description != "" and show.description != nil%>
                       <p>Notes: <%=show.description%></p>
                     <%end%>
                   </div>

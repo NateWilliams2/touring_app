@@ -56,9 +56,14 @@ p {
   box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 15px; /* 5px rounded corners */
-  border: solid rgb(44, 17, 17);
+  border: solid #533b19;
   padding: 0 0 1% 0;
-  margin: 5px 3% auto;
+  margin: 5px 3% auto 3%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 /* On mouse-over, add a deeper shadow */
