@@ -16,15 +16,14 @@
                 <h3><b class="text-left"><%=format_date(show.date) + ": " + show.address.city + " " + show.address.state%> <small><a href="show/<%=show.id%>/edit">Edit <%=show.address.city%> Show</a> | <%= link_to 'Delete ' + show.address.city, show_path(show),
                     :method => :delete, :data => {:confirm => 'Are you sure?'} %></small></b></h3> 
                 <div class="row">
-                  <div class="col-sm-4"><p>Address: <%=show.address.fmt_address()%></p></div>
-                  <div class="col-sm-4"><p>Load-in: <%=format_time(show.load_in)%></p></div>
-                  <div class="col-sm-4"><p>Set time: <%=format_time(show.set)%></p></div>
-                  <div class="col-sm-4"><p>Contact: <%=show.contact_name%></p></div>
-                  <div class="col-sm-4"><p>Email: <%=show.contact_email%></p></div>
-                  <div class="col-sm-4"><p>Number: <%=show.contact_number%></p></div>
-                  <div class="col-sm-4"><p>Lodging: <%=show.lodging%></p></div>
-                  <div class="col-sm-4"><p><%=link_to "Venue Website", show.venue_website.to_s, target: "_blank"%></div>
-                  <div class="col-sm-4"><p>Wifi: <%=show.wifi_net%> Password: <%=show.wifi_pw%></p></div>
+                  <div class="col-sm-4"><p><b>Address:</b> <%=show.address.fmt_address()%></p></div>
+                  <div class="col-sm-4"><p><b>Load-in:</b> <%=format_time(show.load_in)%></p></div>
+                  <div class="col-sm-4"><p><b>Set time:</b> <%=format_time(show.set)%></p></div>
+                  <div class="col-sm-4"><p><b>Contact:</b> <%=show.contact_name%>, <a href="tel:<%=show.contact_number%>"><%=show.contact_number%></a></p></div>
+                  <div class="col-sm-4"><p><b>Email:</b> <%=show.contact_email%></p></div>
+                  <div class="col-sm-4"><p><b>Lodging:</b> <%=show.lodging%></p></div>
+                  <div class="col-sm-4"><p><b><%=link_to "Venue Website", show.venue_website.to_s, target: "_blank"%></b></div>
+                  <div class="col-sm-4"><p><b>Wifi:</b> <%=show.wifi_net%> <b>Password:</b> <%=show.wifi_pw%></p></div>
                   <div class="col-sm-4"><p>There is<%=show.laundry ? " " : " no "%>laundry access</p></div>
                   <div class="col-sm-4"><p>There is<%=show.showers ? " " : " no "%>shower access</p></div>
                   <div class="col-sm-12">              
