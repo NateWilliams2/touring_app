@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/finances", to: "finances#finances", as: :finances
   get "/calendar", to: "calendar#calendar", as: :calendar
   get "/band", to: "band#band", as: :band
+  get "/about", to: "about#about", as: :about
   root "home#home"
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
