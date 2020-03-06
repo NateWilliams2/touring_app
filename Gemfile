@@ -7,7 +7,7 @@ ruby '2.6.3'
 gem 'rails', '~> 6.0.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'rails-ujs', '~> 0.1.0'
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass', '3.4.1'
 gem 'twitter-bootstrap-rails'
 gem 'sprockets-rails', '>= 2.3.2'
 # Use Puma as the app server
